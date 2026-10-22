@@ -1,0 +1,20 @@
+sensor:
+  - platform: vapor_pressure_deficit
+    name: Vapor Pressure Deficit
+    temperature: template_temperature
+    humidity: template_humidity
+    delta_t: -2
+  - platform: template
+    id: template_humidity
+    lambda: |-
+      if (millis() > 10000) {
+        return 0.6;
+      }
+      return 0.0;
+  - platform: template
+    id: template_temperature
+    lambda: |-
+      if (millis() > 10000) {
+        return 42.0;
+      }
+      return 0.0;
