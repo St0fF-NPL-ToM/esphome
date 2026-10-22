@@ -73,7 +73,7 @@ void VPDComponent::loop() {
   }
 
   // Convert to desired units
-  const float temperature_c{this->temperature_ + this_delta_t_};
+  const float temperature_c{this->temperature_ + this->delta_t_};
   const float hr{this->humidity_ / 100.0f};
 
   // Calculate saturation vapor pressure
